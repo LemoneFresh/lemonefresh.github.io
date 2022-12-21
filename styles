@@ -1,0 +1,23 @@
+body {
+  background-color: #ffc400; /* egg shell color */
+}
+nav {
+  width: 200px; /* adjust as needed */
+  height: 100%;
+  background: linear-gradient(to bottom, #FF0000, #FF69B4); /* red and pink gradient */
+  float: left;
+  position: fixed; /* position the nav bar at the top of the page */
+  top: 0; /* align the nav bar with the top of the page */
+  left: 0; /* align the nav bar with the left side of the page */
+  z-index: 1; /* make sure the nav bar appears above other content on the page */
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+nav li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
