@@ -10,7 +10,7 @@ body {
     position: fixed; /* position the nav bar at the top of the page */
     top: 0; /* align the nav bar with the top of the page */
     left: 0; /* align the nav bar with the left side of the page */
-    z-index: 1; /* make sure the nav bar appears above other content on the page */
+    z-index: 2; /* make sure the nav bar appears above other content on the page */
     
   }
   
@@ -86,12 +86,12 @@ body {
       }
 
       #favol {
-        background-color: antiquewhite;
+        background-color: white;
         border-radius: 25px;
         border: 2px solid hsl(356, 76%, 73%);
         padding: 20px;
         height:max-content;
-        
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     }
 
     #favolli{
@@ -120,24 +120,31 @@ body {
         width:100%;
         color: #000;
         list-style: none;
-        background-color: antiquewhite;
+        background-color: white;
         border-radius: 25px;
         border: 2px solid hsl(356, 76%, 73%);
         padding: 20px;
         flex:1;
         float:left;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
            }
            .mapgrid {
             display: grid;
             grid-template-columns: 1fr 1fr ;
             grid-column-gap: 10px;
             grid-row-gap: 25px;
+            
            
           }
           
           #gridrow{
-            border: 1px solid rgb(0, 0, 0);
+            border: 1px solid rgb(0, 0, 0)
+            
           }
+          #gridrow h3{
+            text-align: right;
+          }
+
 
           * {
             box-sizing: border-box;
@@ -240,7 +247,8 @@ body {
             padding: 20px 30px;
             background-color: white;
             position: relative;
-            border-radius: 6px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
           }
           
           /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -281,3 +289,32 @@ body {
                     padding-left: 20px;
                     padding-right: 20px;
                     padding-bottom:0px;}
+
+          /* Overlay */
+          .overlay {
+            position:fixed; /* make the element fixed to the viewport */
+            top: 0;
+            left: 0;
+            width: 100%; /* take up the entire width of the viewport */
+            height: 100%; /* take up the entire height of the viewport */
+            background-color: #faebd7 !important; /* make the element semi-transparent */
+            z-index: 3; /* make the element appear above other elements */
+            margin: 0 auto;
+            text-align: center;
+          }
+          .overlay h1{
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            outline:5px; 
+            width:75%;
+            margin: 0 auto;
+            padding-top: 20px;
+            text-shadow:2px 2px 4px rgb(136, 136, 136);
+          }
+          #text {
+            display: none;
+            opacity: 0;
+            transition: opacity 3s;
+          }
+
+        

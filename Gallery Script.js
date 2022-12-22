@@ -1,15 +1,35 @@
-
-// Get all the images in the directory
-    import { readdirSync } from "fs";
-    const photosDir = "images";
-    const files = readdirSync(photosDir);
-    const imageFiles = files.filter(file => file.endsWith(".jpg"));
-    const images = imageFiles.map(file => `${photosDir}/${file}`);
-
-    // Create an img element for each image
-    const gallery = document.getElementById("gallery");
-    for (const image of images) {
-      const img = document.createElement("img");
-      img.src = image;
-      gallery.appendChild(img);
+function fadeIn() {
+  var element = document.getElementById("text");
+  var opacity = 0;
+  element.style.display = "block";
+  var timer = setInterval(function() {
+    if (opacity >= 1) {
+      clearInterval(timer);
     }
+    element.style.opacity = opacity;
+    opacity += 0.1;
+  }, 100);
+}
+
+function fadeOut() {
+  var element = document.getElementById("text");
+  var opacity = 1;
+  var timer = setInterval(function() {
+    if (opacity <= 0) {
+      clearInterval(timer);
+      element.style.display = "none";
+    }
+    element.style.opacity = opacity;
+    opacity -= 0.1;
+  }, 50);
+}
+
+setInterval(function() {
+  fadeIn();
+  setTimeout(fadeOut, 2000);
+}, 2000);
+
+function redirect() {
+  // Redirect to new page
+  window.location.assign('timeline.html');
+}
